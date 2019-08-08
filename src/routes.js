@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Home from './components/Home';
 import Header from './components/header';
 import Footer from './components/footer';
-import Home from './components/Home';
 
-const Route = () => {
+
+const Routes = () => (
     <BrowserRouter>
         <Header />
         <Switch>
@@ -13,6 +14,6 @@ const Route = () => {
         </Switch>
         <Footer />
     </BrowserRouter>
-}
+)
 
 export default Routes;
