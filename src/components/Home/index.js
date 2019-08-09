@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { latestNews, otherNews } from '../../store/actions';
+
+//sections
+import LatestNews from './latestNews';
+import OtherNews from './otherNews';
 
 class Home extends Component {
 
@@ -11,15 +14,18 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.props)
+        const articles = this.props.articles;
         return (
-            <div>
-                Home
-            </div>
+          <>
+            <LatestNews latest={articles.latest}/>
+            <OtherNews otherNews={articles.otherNews}/>
+          </>
         )
+      }
     }
-}
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
     return {
         articles: state.articles
     }
